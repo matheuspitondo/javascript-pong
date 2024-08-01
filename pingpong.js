@@ -29,6 +29,8 @@ function draw() {
     moveBolinha();
     //chamando a borda
     Borda();
+    criaRaquete(xRaquete, yRaquete, larguraRaquete, alturaRaquete);
+    movimentaRaquete();
 }
 
 //função bolinha
