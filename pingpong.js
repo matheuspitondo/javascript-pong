@@ -60,7 +60,7 @@ function criaRaquete(xRaquete, yRaquete, larguraRaquete, alturaRaquete) {
 
 function movimentaRaquete() {
 
-    if (keyIsDowwn(UP_ARROW)) {
+    if (keyIsDown(UP_ARROW)) {
         yRaquete -= 10;
     }
     if (keyIsDown(DOWN_ARROW)) {
