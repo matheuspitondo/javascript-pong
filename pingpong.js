@@ -5,7 +5,13 @@ let tamBolinha = 25;
 
 //config velocidade bolinha
 let xvelocidadeBolinha = 6;
-let yvelocidadeBolinha = 6;
+let yvelocidadeBolinha = 6; 
+
+//aqui estou configurando a raquete
+let xRaquete = 5; 
+let yRaquete = 150;
+let larguraRaquete = 10;
+let alturaRaquete = 90;
 
 function setup(){
     //aqui vou criar minha "mesa"
@@ -42,5 +48,27 @@ function Borda(){
     }
     if (yBolinha > height || yBolinha < 0){
         yvelocidadeBolinha *= -1;
+    }
+}
+function criaRaquete (xRaquete, yRaquete, larguraRaquete, alturaRaquete) {
+    fill("blue");
+    Reflect(xRaquete, yRaquete, larguraRaquete, alturaRaquete) {
+        //função respondável por movimentar a raquete
+        function movimentaRaquete() {}
+
+             if(keyisDowwn(UP_ARROW)){
+                yRaquete -= 10 ;
+            }
+            if(keyIsDown(DOWN_ARROW)){
+                yRaquete +=10;
+            }
+
+    }
+    //função responsável por quando a bolinha bater na raqete, retornar em direção contrária.
+    function colideRaquete(){
+        if(xBolinha - raioBolinha < xRaquete + larguraRaquete && yBolinha - raioBolinha < yRaquete + alturaRaquete && yBolinha + raioBolinha >yRaquete){
+
+            xvelocidadeBolinha *= -1;
+        }
     }
 }
